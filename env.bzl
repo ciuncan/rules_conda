@@ -11,6 +11,14 @@ py_runtime(
     interpreter = "{env_path}/{interpreter_path}",
     python_version = "PY{py_major}"
 )
+
+filegroup(
+    name = "python_runtime_files",
+    srcs = glob(["{env_path}/**/*"]),
+)
+
+exports_files(glob(["{env_path}/**/*"]))
+
 """
 
 def _label_from_condabin(rctx, exe_name):
