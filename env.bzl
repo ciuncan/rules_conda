@@ -7,7 +7,7 @@ load("@bazel_tools//tools/python:toolchain.bzl", "py_runtime_pair")
 
 py_runtime(
     name = "python_runtime",
-    files = glob(["{env_path}/**/*"], exclude_directories = 0),
+    files = glob(["{env_path}/**/*"], exclude_directories = 1),
     interpreter = "{env_path}/{interpreter_path}",
     python_version = "PY{py_major}"
 )
